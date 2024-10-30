@@ -21,13 +21,15 @@ const Navber = () => {
 
     return (
         <nav>
-            <div className=" md:hidden" onClick={() => setOpen(!open)}>
+            <div className=" md:hidden text-purple-900 bg-yellow-400 p-4" onClick={() => setOpen(!open)}>
               {
                 open === true ? 'open' : 'close'
               }
                 <RiMenu2Fill className=" text- 2xl"></RiMenu2Fill>
             </div>
-            <ul className="md:flex">
+            <ul className={`md:flex duration-1000 absolute 
+                ${open ? 'top-10' : '-top-60'}
+                bg-yellow-300 px-50`}>
                 {
                     routes.map(rout => <Link key={rout.id} rout={rout}></Link>)
                 }
